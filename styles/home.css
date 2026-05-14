@@ -140,6 +140,17 @@ body {
     margin-top: 10px;
 }
 
+/* Invisible bridge to prevent dropdown from disappearing during hover transition */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
+}
+
 .dropdown-content a {
     color: var(--ink-black);
     padding: 12px 16px;
@@ -462,6 +473,131 @@ footer {
 
 .back-link:hover {
     color: var(--burgundy-light);
+}
+
+/* CV Page Styles */
+.cv-container {
+    max-width: 1000px;
+}
+
+.cv-paper {
+    background: white;
+    padding: 60px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-classic);
+    margin-top: 20px;
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.cv-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--ink-black);
+}
+
+.cv-tagline {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.cv-contact {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.cv-contact a {
+    color: var(--burgundy-medium);
+    text-decoration: none;
+}
+
+.cv-summary {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #333;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.cv-section {
+    margin-bottom: 25px;
+}
+
+.cv-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: var(--burgundy-dark);
+}
+
+.cv-item {
+    margin-bottom: 20px;
+}
+
+.cv-item h4 {
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+}
+
+.cv-sub {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cv-date {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.cv-section ul {
+    padding-left: 18px;
+    font-size: 0.9rem;
+}
+
+.cv-section li {
+    margin-bottom: 5px;
+}
+
+.skills-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.skills-list li::before {
+    content: "• ";
+    color: var(--burgundy-medium);
+}
+
+@media (max-width: 768px) {
+    .cv-paper {
+        padding: 30px 20px;
+    }
+    
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cv-header h2 {
+        font-size: 1.8rem;
+    }
 }
 
 /* Responsive Design */
