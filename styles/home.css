@@ -746,7 +746,7 @@ footer {
 
     /* Mobile Icon Hover Override */
     .social-icon:hover, .footer-socials:hover {
-        filter: invert(15%) sepia(95%) saturate(3000%) hue-rotate(340deg) brightness(100%) contrast(110%); /* Bright Burgundy */
+        filter: invert(72%) sepia(45%) saturate(530%) hue-rotate(3deg) brightness(92%) contrast(88%); /* Gold */
         transform: scale(1.1); /* Minimal scale for mobile */
         box-shadow: none;
     }
