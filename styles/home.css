@@ -34,6 +34,17 @@ html {
     background: var(--burgundy-medium);
 }
 
+/* Custom Text Selection */
+::selection {
+    background-color: var(--burgundy-dark);
+    color: var(--gold-solid);
+}
+
+::-moz-selection {
+    background-color: var(--burgundy-dark);
+    color: var(--gold-solid);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -698,8 +709,90 @@ footer {
     .menu-toggle:checked ~ .nav-inner {
         display: flex;
     }
+}
 
-    /* Animate Hamburger */
+/* Contact Form Styles */
+.contact-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-classic);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--burgundy-dark);
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    background: #fdfdfd;
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--burgundy-medium);
+    background: white;
+    box-shadow: 0 0 5px rgba(122, 12, 22, 0.1);
+}
+
+.submit-btn {
+    background: var(--burgundy-dark);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    align-self: center;
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    background: var(--burgundy-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
     .menu-toggle:checked + .hamburger span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
@@ -770,6 +863,16 @@ footer {
     
     .skill-card {
         height: 300px;
+    }
+
+    /* Contact Mobile */
+    .contact-container {
+        padding: 30px 20px;
+        margin: 20px 10px;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
     }
     
     .skill-text-box {

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Writing - Nicolletta's Portfolio</title>
+    <title>Contact Nicolletta - Portfolio</title>
     <link rel="stylesheet" href="../styles/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="newspaper-bg">
     <header class="masthead">
         <div class="masthead-top">
-            <div class="date-issue">Vol. 1 — Creative Writing</div>
+            <div class="date-issue">Vol. 1 — Portfolio</div>
             <div class="brand-container">
                 <h1 class="brand-title"><span class="cursive">Nicolletta<br></span> the Writer</h1>
             </div>
@@ -47,37 +47,49 @@
 
     <div class="main">
         <a href="../index.html" class="back-link">← Back to Home</a>
-        <div class="main-header">
-            <h3>GENRE</h3>
-            <h2>Creative Writing</h2>
-        </div>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>Have a project in mind or just want to say hello? Send a message below.</p>
+            </div>
+            
+            <div id="form-status-success" class="form-status success" data-fs-success>
+                <p>Thank you! Your message has been sent successfully. I'll get back to you soon.</p>
+            </div>
+            <div id="form-status-error" class="form-status error" data-fs-error>
+                <p>Oops! There was a problem submitting your form. Please try again.</p>
+            </div>
 
-        <div class="article-list">
-            <div class="article-item">
-                <h3><a href="articlePages/creativeWriting/southern-nigeria.html">To the girl from Southern Nigeria</a></h3>
-                <p>That Hausa boy will not marry you.</p>
-                <div class="post-meta">Oct 2024 • Cultural Reflection</div>
-            </div>
-            <div class="article-item">
-                <h3><a href="articlePages/creativeWriting/maybe-wife.html">maybe you're supposed to be my wife</a></h3>
-                <p>Are you familiar with thunder?</p>
-                <div class="post-meta">Creative • Essay</div>
-            </div>
-            <div class="article-item">
-                <h3><a href="articlePages/creativeWriting/lifestyle-maintenance.html">no be to start lifestyle, you go fit maintain am</a></h3>
-                <p>No be to start lifestyle, you go fit maintain am?</p>
-                <div class="post-meta">Creative • Essay</div>
-            </div>
-            <div class="article-item">
-                <h3><a href="articlePages/creativeWriting/who-is-my-father.html">do you know who my father is</a></h3>
-                <p>Oh please, just shut up.</p>
-                <div class="post-meta">Creative • Essay</div>
-            </div>
-            <div class="article-item">
-                <h3><a href="articlePages/creativeWriting/crisis-management.html">you still haven't learnt crisis management in big 2026</a></h3>
-                <p>Hop on, let Nicole teach you.</p>
-                <div class="post-meta">Creative • Essay</div>
-            </div>
+            <form id="contact-form" action="https://formspree.io/f/mvzyglzd" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" data-fs-field required>
+                    <span class="field-error" data-fs-error="name"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" data-fs-field required>
+                    <span class="field-error" data-fs-error="email"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" data-fs-field>
+                    <span class="field-error" data-fs-error="subject"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..." data-fs-field required></textarea>
+                    <span class="field-error" data-fs-error="message"></span>
+                </div>
+
+                <!-- Formspree configuration -->
+                <input type="hidden" name="_subject" value="New Portfolio Inquiry!">
+                
+                <button type="submit" class="submit-btn" data-fs-submit-btn>Send Message</button>
+            </form>
         </div>
     </div>
 
@@ -92,5 +104,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Formspree Ajax Integration -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { 
+            formElement: '#contact-form', 
+            formId: 'mvzyglzd' 
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
